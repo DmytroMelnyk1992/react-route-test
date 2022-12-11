@@ -80,7 +80,9 @@ export default function App() {
         <p className={css.search}>Start searching everything You want</p>
       )}
 
-      {loadMore && <Button onClick={loadMore} page={page} />}
+      {loadMore && (
+        <Button onClick={() => setPage(page => page + 1)} page={page} />
+      )}
       {showModal && (
         <Modal images={images} id={Number(id)} onClose={closeModal} />
       )}
